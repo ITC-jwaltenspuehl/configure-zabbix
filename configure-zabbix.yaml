@@ -7,6 +7,4 @@
      - name: create PSK
        command: openssl rand -hex 32 > /etc/zabbix/psk.psk | cat /etc/zabbix/psk.psk
      - name: download new config
-       command: rm -f /etc/zabbix/zabbix_proxy.conf
-     - name: download new config
-       command: wget  /etc/zabbix/zabbix_proxy.conf
+       command: curl https://raw.githubusercontent.com/ITC-jwaltenspuehl/configure-zabbix/main/zabbix_proxy.conf --output /etc/zabbix/zabbix_proxy.conf
